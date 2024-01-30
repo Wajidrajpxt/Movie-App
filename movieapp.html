@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie App</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            /* border: 1px solid #000; */
+            background-color: blueviolet;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 45px;
+            font-weight: 500;
+            color: wheat;
+        }
+
+        .parent {
+            height: 10vh;
+            width: 30%;
+            /* border: 1px solid #000; */
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        h3 {
+            font-size: 19px;
+            color: wheat;
+        }
+
+        .selected22 {
+            height: 5vh;
+            width: 70%;
+            /* border: 1px solid #000; */
+            margin-left: 5px;
+            font-size: 15px;
+        }
+
+        .spidi {
+            font-size: 15px;
+            color: black;
+        }
+
+        .showcase {
+            height: 8vh;
+            width: 30%;
+            /* border: 1px solid #000; */
+            background-color: rgb(109, 52, 162);
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .na {
+            height: 100%;
+            width: 25%;
+            /* border: 1px solid #000; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .seat {
+            height: 25px;
+            width: 25px;
+            /* border: 1px solid #000; */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transition: all 0.22s linear;
+            background-color: rgba(255, 255, 255, 0.464);
+        }
+
+        .selected {
+            height: 25px;
+            width: 25px;
+            background-color: aqua;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            cursor: pointer;
+
+        }
+
+        p {
+            font-size: 17px;
+            color: wheat;
+        }
+
+        .occupied {
+            height: 25px;
+            width: 25px;
+            background-color: white;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            cursor: not-allowed;
+        }
+
+        .screen {
+            height: 160px;
+            width: 400px;
+            /* border: 1px solid black; */
+            background-color: white;
+            box-shadow: 5px 5px 5px 5px white;
+            transform: rotateX(-55deg);
+        }
+
+        .box {
+            height: 40vh;
+            width: 50%;
+            /* border: 1px solid; */
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .row {
+            height: 30vh;
+            width: 8%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            /* border: 1px solid; */
+        }
+
+        .box2 {
+            height: 30vh;
+            width: 40%;
+            /* border: 1px solid; */
+            display: flex;
+            margin-left: 30px;
+            display: flex;
+            justify-content: space-around;
+            /* flex-direction: column; */
+        }
+
+        .rowing {
+            width: 220px;
+        }
+
+        .sp1 {
+            font-size: 21px;
+            color: aqua;
+        }
+
+        .have {
+            font-size: 20px;
+            color: wheat;
+        }
+
+        .sp2 {
+            font-size: 21px;
+            color: aqua;
+        }
+
+        .seat:hover {
+            /* cursor: pointer; */
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <h1>Movie Application</h1>
+
+        <div class="parent">
+
+            <h3>Pick a movie</h3>
+            <select class="selected22" name="" id="">
+                <option class="spidi" value="10">Spiderman(10$)</option>
+                <option class="spidi" value="20">Ironman (20$) </option>
+                <option class="spidi" value="5">Antman (5$) </option>
+                <option class="spidi" value="25">Mr.Bean (25$) </option>
+            </select>
+        </div>
+
+        <div class="showcase">
+
+            <div class="na">
+                <div class="seat"></div>
+                <p>N/A </p>
+            </div>
+            <div class="na">
+                <div class="selected"></div>
+                <p> Selected </p>
+            </div>
+            <div class="na">
+                <div class="occupied"></div>
+                <p> occupied </p>
+            </div>
+        </div>
+
+        <div class="screen"></div>
+        <div class="box">
+            <div class="row ">
+                <div class="seat selected"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+            </div>
+            <div class="row ">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+            </div>
+
+            <div class="box2">
+
+                <div class="row rowing">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+                <div class="row rowing">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+                <div class="row rowing">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+
+                <div class="row rowing">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat"></div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+            </div>
+
+            <div class="row ">
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+        </div>
+        <p class="have">You have seleed <span class="sp1">0</span> for a price of <span class="sp2">$</span></p>
+    </div>
+    <script>
+        let selection = document.querySelector(".selected22")
+        let seats = document.querySelectorAll(".seat")
+        let sp11 = document.querySelector(".sp1")
+        let sp22 = document.querySelector(".sp2")
+        let sel = document.querySelector(".selected")
+        let count = document.querySelector(".selected")
+        let main = document.querySelector(".main")
+
+
+        populate();
+
+        let tickprice = selection.value 
+        
+
+        function setmovie(movieindx,movieprice){
+            localStorage.setItem("selectmovieindx",movieindx)
+            localStorage.setItem("selectmovieprice",movieprice)
+        }
+
+        function update(){
+
+            let sseats = document.querySelectorAll('.seat')
+     
+            let seatsIndex = [sseats].map((seat)=>[sseats].indexOf(seat))
+     
+            localStorage.setItem('sseats', JSON.stringify(seatsIndex));
+
+            let sscount = sseats.length;
+
+            sp11.innerHTML = sscount;
+            
+            sp22.innerHTML = sscount * tickprice
+     
+
+        }
+
+        function populate(){
+            let sseats = JSON.parse(localStorage.getItem('sseats'))
+     
+            if(sseats !== null && sseats.length > 0){
+                seats.forEach((ele,indx)=>{
+
+                    
+                    if (sseats.indexOf(indx)> -1){
+                        ele.classList.add('selected')
+                    }
+                });
+                
+            }
+            let selectmovieindx = localStorage.getItem('selectmovieindx')
+            if(selectmovieindx !== null){
+            selection.selectedindx = selectmovieindx;
+        }    
+        
+    }
+    selection.addEventListener('change',(e)=>{
+
+        tickprice = e.target.value        
+        setmovie(e.target.selectmovieindx, e.target.value)
+       
+        update();
+    });
+
+    main.addEventListener("click",(e)=>{
+        if(
+        e.target.classList.contains('seat') &&
+        !e.target.classList.toggle('selected')
+        ){
+            e.target.classList.toggle('selected')
+            update()
+        }
+    })
+        update()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let seatvalue 
+        // let seats = 0
+        
+        // for (let ss of seat) {
+        //     ss.addEventListener('click', function () {
+        //         seatvalue = selection.value
+        //         console.log(seatvalue, typeof seatvalue);
+        //         seats++;
+        //         // if(!ss.classList.contains(''))  
+        //         if (!ss.classList.contains('selected')) {
+        //             ss.classList.add('selected');
+        //             seatvalue = seats * seatvalue;
+        //         } else {
+        //             seats--;
+        //             ss.classList.remove('selected');
+        //             seatvalue -= 10;
+        //         }
+
+        //         sp22.innerHTML = seatvalue;
+        //         sp11.innerHTML = seats;
+        //         updateprice(ss)
+        //     });
+        // }   
+        
+        //     function updateprice(sss){
+               
+        //         let price = 0
+                
+        //         if(seatvalue == '10' ){
+        //             price == "0"
+
+        //         }
+        //         else if(seatvalue == "20" ){
+        //             price == "0"
+        //             sss.className = ""
+        //             sss.className = "seat"
+        //             console.log(sss);
+
+        //         }
+        //         else if(seatvalue =='5'){
+        //             price == "0"
+        //         }
+        //         else if(seatvalue == '25'){
+        //             price == "0"
+        //             price = 0
+        //         }
+        //     }
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+                // switch (selection) {
+
+                //     case 'Spiderman(10$)':
+                //         if (!ss.classList.contains(''))
+                //             if (!ss.classList.contains('selected')) {
+                //                 seats++
+                //                 ss.classList.add('selected');
+                //                 seatvalue = seats * seatvalue;
+                //             }
+                //             else {
+                //                 seats--;
+                //                 ss.classList.remove('selected');
+                //                 seatvalue -= 10
+                //             }
+                //         sp22.innerHTML = seats * seatvalue;
+                //         sp11.innerHTML = seats;
+                //         break;
+                // }
+        // selection.addEventListener("change", (e) => selectt(e))
+        // seat.classList.add('selected')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
